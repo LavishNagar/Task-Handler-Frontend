@@ -1,10 +1,29 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Cards from '../components/Home/Cards'
+import axios from 'axios';
 
 const CompletedTasks = () => {
+
+  const [Data,setData]=useState();
+
+  const headers={id:localStorage.getItem("id"),Authorization:`Bearer ${localStorage.getItem("token")}`};
+  useEffect(()=>{
+    const fetch=async ()=>{
+      const response=await axios.get('http://localhost:4000/api/v1/getCmpTasks',{headers}, {
+        headers: {
+          'Content-Type': 'application/json' // Only if needed
+        }
+      });
+      // console.log("res",response);
+      setData(response.data.data);
+      // console.log("impData",Data);
+    };
+    fetch();
+    });
+
   return (
     <div>
-        <Cards home={"false"} ></Cards>
+        <Cards home={"false"} data={Data}></Cards>
     </div>
   )
 }
