@@ -14,7 +14,7 @@ const Cards = ({home,setinputDiv,data,setUpdatedData}) => {
 
   const handleCompleteTask=async (id)=>{
     try{
-   await axios.put(`http://localhost:4000/api/v1/update-cmp-task/${id}`,{},{headers}
+   await axios.put(`https://task-handle-backend-1.onrender.com/api/v1/update-cmp-task/${id}`,{},{headers}
       )
       // console.log(response.data.message);
     }
@@ -24,7 +24,7 @@ const Cards = ({home,setinputDiv,data,setUpdatedData}) => {
   }
   const handleImportant=async (id)=>{
     try{
-   await axios.put(`http://localhost:4000/api/v1/update-imp-task/${id}`,{},{headers}
+   await axios.put(`https://task-handle-backend-1.onrender.com/api/v1/update-imp-task/${id}`,{},{headers}
       )
       // console.log(response.data.message);
     }
@@ -34,7 +34,7 @@ const Cards = ({home,setinputDiv,data,setUpdatedData}) => {
   }
   const deleteTask=async (id)=>{
     try{
-   await axios.delete(`http://localhost:4000/api/v1/delete-Task/${id}`,{headers}
+   await axios.delete(`https://task-handle-backend-1.onrender.com/api/v1/delete-Task/${id}`,{headers}
       )
       // console.log(response.data.message);
     }

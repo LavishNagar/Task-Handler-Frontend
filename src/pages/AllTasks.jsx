@@ -18,7 +18,7 @@ const AllTasks = () => {
     const headers={id:localStorage.getItem("id"),Authorization:`Bearer ${localStorage.getItem("token")}`};
     useEffect(()=>{
       const fetch=async ()=>{
-        const response=await axios.get('http://localhost:4000/api/v1/getAllTasks',{headers}, {
+        const response=await axios.get('https://task-handle-backend-1.onrender.com/api/v1/getAllTasks',{headers}, {
           headers: {
             'Content-Type': 'application/json' // Only if needed
           }

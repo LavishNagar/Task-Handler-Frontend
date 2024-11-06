@@ -48,7 +48,7 @@ const Sidebar = () => {
   // console.log("token",headers.Authorization);
 useEffect(()=>{
 const fetch=async ()=>{
-  const response=await axios.get('http://localhost:4000/api/v1/getAllTasks',{headers}, {
+  const response=await axios.get('https://task-handle-backend-1.onrender.com/api/v1/getAllTasks',{headers}, {
     headers: {
       'Content-Type': 'application/json' // Only if needed
     }
@@ -57,7 +57,7 @@ const fetch=async ()=>{
   setData(response.data.data)
 };
 fetch();
-},[]);
+});
 
   return (
     <>

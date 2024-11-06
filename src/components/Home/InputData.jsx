@@ -21,7 +21,7 @@ const InputData = ({ inputDiv, setinputDiv, UpdatedData,setUpdatedData}) => {
     if (Data.title === "" || Data.desc === "") {
       alert("All fields are required");
     } else {
-      await axios.post("http://localhost:4000/api/v1/create-task", Data, {
+      await axios.post("https://task-handle-backend-1.onrender.com/api/v1/create-task", Data, {
         headers,
       });
       setData({ title: "", desc: "" });
@@ -33,7 +33,7 @@ const InputData = ({ inputDiv, setinputDiv, UpdatedData,setUpdatedData}) => {
     if (Data.title === "" || Data.desc === "") {
       alert("All fields are required");
     } else {
-      await axios.put(`http://localhost:4000/api/v1/update-task/${UpdatedData.id}`, Data, {
+      await axios.put(`https://task-handle-backend-1.onrender.com/api/v1/update-task/${UpdatedData.id}`, Data, {
         headers,
       });
       setData({ title: "", desc: "" });

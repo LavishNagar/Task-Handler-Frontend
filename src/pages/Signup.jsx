@@ -26,7 +26,7 @@ const Signup = () => {
         alert("Alll fields are required");
       }
       else{
-        const response=await axios.post("http://localhost:4000/api/v1/signup",Data, {
+        const response=await axios.post("https://task-handle-backend-1.onrender.com/api/v1/signup",Data, {
           headers: {
             'Content-Type': 'application/json' // Only if needed
           }
